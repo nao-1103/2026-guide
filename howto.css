@@ -28,7 +28,7 @@ body {
 
 .page-header h1 {
   font-size: 4rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   color: #ffffff;
 }
 
@@ -56,7 +56,7 @@ body {
 }
 
 .point {
-  border-left: 2px solid #fff;
+  border-left: 2px solid #bcbcbc;
   padding-left: 30px;
   position: relative;
 }
@@ -72,45 +72,53 @@ body {
 .point h2 {
   font-size: 1.8rem;
   margin-bottom: 10px;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .point p {
-  color: #aaa;
+  color: #d7d7d7;
   line-height: 1.8;
+  font-size: 1.3rem;
 }
 
 /* ボタン */
-.point-links {
-  margin-top: 20px;
-  display: flex;
-  gap: 20px;
-}
-
-.line-btn {
+.shop-btn {
   position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 22px;
+
+  border: 1px solid #fff;
   color: #fff;
   text-decoration: none;
 }
 
-.line-btn span {
+/* テキスト前面 */
+.shop-btn span {
   position: relative;
+  z-index: 1;
 }
 
-.line-btn::after {
+/* 背景 */
+.shop-btn::before {
   content: "";
   position: absolute;
-  left: 50%;
-  bottom: -4px;
-  width: 0;
-  height: 1px;
+  inset: 0;
   background: #fff;
-  transition: 0.3s;
-  transform: translateX(-50%);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
-.line-btn:hover::after {
-  width: 100%;
+/* ホバー */
+.shop-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.shop-btn:hover {
+  color: #000;
 }
 
 /* セクションタイトル */
@@ -126,11 +134,18 @@ body {
   display: flex;
   gap: 50px;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 150px;
+  margin-top: 140px;
+  margin-right: auto;
+  width: 70%;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  padding: 60px 0;
 }
 
 .recommend-card.reverse {
   flex-direction: row-reverse;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 /* 画像 */
@@ -147,8 +162,9 @@ body {
 }
 
 .recommend-text p {
-  color: #d8d7d7;
+  color: #d7d7d7;
   line-height: 1.8;
+  font-size: 1.2rem;
 }
 
 footer {
