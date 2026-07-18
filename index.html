@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ベース完全スタートガイド</title>
     <link rel="stylesheet" href="top.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+U:wght@100..900&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header class="header">
@@ -12,31 +15,31 @@
       <h1>ベース初心者ガイド</h1>
     </header>
 
-    <section class="intro">
-      <h2>〜ベースの世界へようこそ〜</h2>
+    <section class="intro fade-up">
+      <h2>ベースの世界へようこそ</h2>
       <p>
         ベースは低音と様々な演奏方法が魅力的な楽器です。憧れのベーシストがいたり、好きなバンドの曲を弾いてみたいという理由でベースに興味を持った方も多いと思います。このサイトでは「ベースを始めたいけれど何から手をつければいいの？」という疑問や不安を解決できるような情報を発信しています。かっこいいベーシストへの第一歩を一緒に踏み出してみましょう！
       </p>
     </section>
 
-    <section class="preview-items">
+    <section class="preview-items fade-up">
       <h2>〜まずはこれを揃えよう〜</h2>
 
       <div class="preview-list">
         <div class="preview-item">
-          <img src="img/jazzbass.jpg" alt="" />
+          <img src="img/mybass.jpg" alt="ベース" />
           <p>ベース</p>
         </div>
         <div class="preview-item">
-          <img src="img/effector.png" alt="" />
+          <img src="img/chuner.jpg" alt="クリップチューナー" />
           <p>チューナー</p>
         </div>
         <div class="preview-item">
-          <img src="img/amp.JPG" alt="" />
+          <img src="img/ampeg.PNG" alt="小型アンプ" />
           <p>アンプ</p>
         </div>
         <div class="preview-item">
-          <img src="img/shieldedcable.jpg" alt="" />
+          <img src="img/shield.jpg" alt="シールドケーブル" />
           <p>シールドケーブル</p>
         </div>
       </div>
@@ -44,17 +47,35 @@
       <a href="gear.html" class="btn-sub"><span>詳しくはこちら →</span></a>
     </section>
 
-    <section class="links">
+    <section class="links fade-up">
       <h2>～MENU～</h2>
-
       <div class="link-buttons">
         <a href="howto.html" class="btn-main"><span>おすすめの機材と選び方</span></a>
-        <a href="#" class="btn-main"><span>おすすめの基礎練習</span></a>
+        <a href="practice.html" class="btn-main"><span>おすすめの基礎練習</span></a>
       </div>
     </section>
 
     <footer>
       <p>© Bass Start Guide 2026</p>
     </footer>
+
+    <script>
+    const targets = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    targets.forEach(target => {
+      observer.observe(target);
+    });
+  </script>
+
   </body>
 </html>

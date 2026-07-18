@@ -1,0 +1,289 @@
+body {
+  background: #111;
+  color: #fff;
+  margin: 0;
+  font-family: "Inter", "M PLUS U", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ヘッダー */
+.page-header {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 8vw;
+}
+
+.title-bg {
+  position: absolute;
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+  opacity: 0.4;
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.page-header h1 {
+  font-size: 4rem;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.page-header h1::after {
+  content: "";
+  display: block;
+  width: 430px;
+  height: 2px;
+  background: #fff;
+  margin-top: 16px;
+  opacity: 0.6;
+}
+
+.page-header p {
+  margin-top: 40px;
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+
+/* 練習セクション */
+.practice {
+  max-width: 800px;
+  margin: 40px auto;
+  margin-top: 80px;
+}
+
+.practice h3 {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+/* カード */
+.practice-card {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.practice-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.practice-card iframe {
+  width: 100%;
+  height: 200px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+/* 横並び（Practice4） */
+.practice-flex {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.practice-flex img {
+  width: 40%;
+  border-radius: 8px;
+}
+
+.practice-flex p {
+  width: 60%;
+}
+
+.songs {
+  max-width: 800px;
+  margin: 40px auto;
+  margin-top: 150px;
+}
+
+.song-card {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-top: 40px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: 0.3s;
+}
+
+.song-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.song-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+}
+
+.song-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transition: 0.3s;
+  z-index: 0;
+}
+
+.song-btn:hover::before {
+  left: 0;
+}
+
+.song-btn span,
+.song-btn {
+  position: relative;
+  z-index: 1;
+}
+
+.song-btn:hover {
+  color: #000;
+}
+
+footer {
+  padding: 40px 8vw;
+  border-top: 1px solid #222;
+  color: #666;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.pc {
+  display: inline;
+}
+.sp {
+  display: none;
+}
+
+@media screen and (max-width: 430px) {
+  .pc {
+    display: none;
+  }
+  .sp {
+    display: inline;
+  }
+  .practice-card,
+  .song-card {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .song-img img {
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.2em;
+  }
+
+  .page-header h1::after {
+    width: 300px;
+    margin: 12px auto 0;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .practice-card,
+  .song-card {
+    padding: 20px;
+  }
+
+  .practice-card p {
+    font-size: 1rem;
+  }
+
+  .practice h3 {
+    margin-left: 20px;
+  }
+
+  .songs h2 {
+    margin-left: 20px;
+  }
+
+  .song-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .song-text p {
+    font-size: 0.9rem;
+  }
+
+  /* 🍔ボタン表示 */
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  /* ナビ初期は隠す */
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: 0.3s;
+    z-index: 1000;
+  }
+
+  /* 開いたとき */
+  .menu-toggle:checked ~ .nav {
+    right: 0;
+  }
+
+  /* オーバーレイ */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 999;
+  }
+
+  /* メニュー開いたら表示 */
+  .menu-toggle:checked ~ .overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

@@ -2,7 +2,8 @@ body {
   background: #111;
   color: #fff;
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Inter", "M PLUS U", sans-serif;
+  overflow-x: hidden;
 }
 
 /* ヘッダー */
@@ -21,7 +22,7 @@ body {
   width: 100%;
   height: 40vh;
   object-fit: cover;
-  opacity: 0.2;
+  opacity: 0.4;
   transform: scale(1.1);
   z-index: 0;
 }
@@ -45,7 +46,7 @@ body {
 .page-header p {
   margin-top: 40px;
   color: #ffffff;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .choose-points {
@@ -53,6 +54,7 @@ body {
   flex-direction: column;
   gap: 80px;
   margin-top: 80px;
+  margin-left: 80px;
 }
 
 .point {
@@ -125,27 +127,30 @@ body {
 .section-title {
   text-align: center;
   margin: 200px 0 100px;
-  font-size: 2.1rem;
+  font-size: 2.6rem;
   letter-spacing: 0.1em;
 }
 
 /* おすすめ */
 .recommend-card {
   display: flex;
-  gap: 50px;
+  gap: 40px;
   align-items: center;
-  margin-bottom: 150px;
-  margin-top: 140px;
+  margin: 90px;
+  margin-top: 100px;
   margin-right: auto;
+  margin-left: 100px;
   width: 70%;
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  padding: 60px 0;
+  max-width: 900px;
+  padding: 40px;
+  background-color: #2d2d2d;
+  box-sizing: border-box;
 }
 
 .recommend-card.reverse {
   flex-direction: row-reverse;
   margin-left: auto;
-  margin-right: 0;
+  margin-right:30px;
 }
 
 /* 画像 */
@@ -174,4 +179,120 @@ footer {
   font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-align: center;
+}
+
+.sp {
+  display: none;
+}
+
+@media screen and (max-width: 430px) {
+  .sp {
+    display: inline;
+  }
+
+  /* ヘッダー */
+  .page-header {
+    height: 30vh;
+    padding: 0 5vw;
+  }
+
+  .title-bg {
+    height: 50vh;
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem;
+    margin-top: 200px;
+  }
+
+  .page-header h1::after {
+    width: 370px;
+    margin: 12px auto 0;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+  /* 選び方ポイント */
+  .choose-points {
+    gap: 50px;
+    margin-top: 200px;
+    margin-left: 40px;
+  }
+
+  .point {
+    padding-left: 20px;
+  }
+
+  .num {
+    font-size: 2rem;
+    left: -5px;
+    top: -10px;
+  }
+
+  .point h2 {
+    font-size: 1.3rem;
+    margin-top: 30px;
+  }
+
+  .point p {
+    font-size: 1rem;
+  }
+
+  /* セクションタイトル */
+  .section-title {
+    margin: 120px 0 60px;
+    font-size: 1.5rem;
+  }
+
+  /* おすすめカード */
+  .recommend-card {
+    flex-direction: column;
+    width: 90%;
+    padding: 30px 20px;
+    gap: 20px;
+    margin: 50px auto;
+  }
+
+  .recommend-card.reverse {
+    flex-direction: column;
+    width: 90%;
+    padding: 30px 20px;
+    gap: 20px;
+    margin: 50px auto;
+  }
+
+  /* 画像 */
+  .recommend-img img {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  /* テキスト */
+  .recommend-text {
+    text-align: center;
+  }
+
+  .recommend-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .recommend-text p {
+    font-size: 0.95rem;
+  }
+
+  /* ボタン */
+  .shop-btn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+
+  /* フッター */
+  footer {
+    padding: 30px 5vw;
+    font-size: 0.7rem;
+  }
 }
