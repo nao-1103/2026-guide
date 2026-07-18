@@ -123,3 +123,13 @@
 .menu-toggle:checked + .hamburger span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
+
+@media screen and (max-width: 430px){
+  a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus {
+  outline: none;
+}
+}
