@@ -374,4 +374,12 @@ footer {
     padding: 12px;
     margin-top: 10px;
   }
+
+  a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+  a:focus {
+   outline: none;
+  }
 }
