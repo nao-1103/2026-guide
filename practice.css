@@ -74,30 +74,15 @@ body {
   margin-bottom: 15px;
 }
 
-.practice-card iframe {
+.video-iframe {
   width: 100%;
   height: 450px;
   margin-top: 15px;
   border-radius: 10px;
 }
 
-/* 横並び（Practice4） */
-.practice-flex {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  background: #1c1c1c;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.practice-flex img {
-  width: 40%;
-  border-radius: 8px;
-}
-
-.practice-flex p {
-  width: 60%;
+.video-link {
+  display: none;
 }
 
 .songs {
@@ -181,21 +166,70 @@ footer {
   .sp {
     display: inline;
   }
+  
+*{
+  pointer-events: auto !important;
+}
+
   .practice-card,
   .song-card {
     flex-direction: column;
+    display: block;
     gap: 20px;
+    padding: 20px;
   }
 
   .song-img img {
     width: 100%;
   }
-
-  iframe {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
+  .page-header {
+    pointer-events: none;
   }
+
+  .video-iframe {
+    display: none;
+  }
+
+  .video-link {
+    display: block;
+  }
+
+.video-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+}
+
+.video-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transition: 0.3s;
+  z-index: 0;
+}
+
+.video-link:hover::before {
+  left: 0;
+}
+
+.video-link span,
+.video-link {
+  position: relative;
+  z-index: 1;
+}
+
+.video-link:hover {
+  color: #000;
+}
 
   .page-header h1 {
     font-size: 2.5rem;
@@ -209,11 +243,6 @@ footer {
 
   .page-header p {
     font-size: 1rem;
-  }
-
-  .practice-card,
-  .song-card {
-    padding: 20px;
   }
 
   .practice-card p {
@@ -234,56 +263,5 @@ footer {
 
   .song-text p {
     font-size: 0.9rem;
-  }
-
-  /* 🍔ボタン表示 */
-  .hamburger {
-    display: block;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-  }
-
-  /* ナビ初期は隠す */
-  .nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    height: 100vh;
-    background: #111;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    transition: 0.3s;
-    z-index: 1000;
-  }
-
-  /* 開いたとき */
-  .menu-toggle:checked ~ .nav {
-    right: 0;
-  }
-
-  /* オーバーレイ */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s;
-    z-index: 999;
-  }
-
-  /* メニュー開いたら表示 */
-  .menu-toggle:checked ~ .overlay {
-    opacity: 1;
-    pointer-events: auto;
   }
 }
