@@ -277,7 +277,15 @@ footer {
   transform: translateY(0);
 }
 
+.sp {
+  display: none;
+}
+
 @media screen and (max-width: 440px) {
+  .sp {
+    display: inline;
+  }
+
   /* ===== ヘッダー ===== */
   .header {
     height: 30vh;
