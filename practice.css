@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: #111;
   color: #fff;
@@ -15,6 +21,8 @@ body {
   align-items: center;
   text-align: center;
   padding: 0 8vw;
+  position: relative;
+  overflow: hidden;
 }
 
 .title-bg {
@@ -37,6 +45,7 @@ body {
   content: "";
   display: block;
   width: 430px;
+  max-width: 100%;
   height: 2px;
   background: #fff;
   margin-top: 16px;
